@@ -19,10 +19,21 @@ pip install requests click subprocess32
 
 ## Usage
 
-Run the following command:
-
+To use GitForkFinder, run the following command:
 ```bash
-python get_forks.py
+Copy code
+python get_forks.py --repo [GitHub Repo URL] --token [Your GitHub Personal Access Token]
+```
+
+## CLI Options:
+
+--repo: The GitHub repository URL you want to analyze. This will be prompted if not provided.
+--token: Your GitHub Personal Access Token for API access. This will be prompted if not provided.
+--output: (Optional) The name of the output CSV file. The default is forks.csv.
+
+Example:
+```bash
+python get_forks.py --repo https://github.com/example/repo.git --token abc123
 ```
 
 ## Why BestFork?
