@@ -25,7 +25,7 @@ Copy code
 python get_forks.py --repo [GitHub Repo URL] --token [Your GitHub Personal Access Token]
 ```
 
-## CLI Options:
+### CLI Options:
 
 --repo: The GitHub repository URL you want to analyze. This will be prompted if not provided.
 --token: Your GitHub Personal Access Token for API access. This will be prompted if not provided.
