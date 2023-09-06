@@ -1,9 +1,9 @@
 
-# GitForkFinder
+# BestFork
 
 ## Overview
 
-GitForkFinder is a Python-based CLI tool designed to identify and prioritize developers who have forked a specific GitHub repository. By analyzing the "Amount of Change" and the last update time, GitForkFinder sorts potential contributors who could be valuable additions to the original project's community.
+BestFork is a Python-based CLI tool designed to identify and prioritize best developers who have forked a specific GitHub repository. By analyzing the "Amount of Change" and the last update time, GitForkFinder sorts potential contributors who could be valuable additions to the original project's community.
 
 ## Features
 
