@@ -29,14 +29,19 @@ def get_forks(repo, token, output):
         # Calculate the amount of change
         amount_of_change = calculate_amount_of_change(fork_git_url, repo)
 
-        fork_data.append([fork_owner, email, fork_url, fork_updated_at, amount_of_change])
+        # Get the number of commits posted to the repo by the fork owner
+        commits_url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits?author={fork_owner}"
+        r = requests.get(commits_url, headers=headers)
+        num_commits = len(r.json())
+
+        fork_data.append([fork_owner, email, fork_url, fork_updated_at, amount_of_change, num_commits])
 
     # Sort by amount_of_change and updated_at
     fork_data = sorted(fork_data, key=lambda x: (x[4], x[3]), reverse=True)
 
     with open(output, 'w', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(['Fork Owner', 'Email', 'Fork URL', 'Updated At', 'Amount of Change'])
+        writer.writerow(['Fork Owner', 'Email', 'Fork URL', 'Updated At', 'Amount of Change', 'Number of Commits'])
         writer.writerows(fork_data)
 
 def calculate_amount_of_change(fork_url, original_url):
