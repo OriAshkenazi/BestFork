@@ -23,6 +23,7 @@ def get_forks(repo, token, output):
         fork_owner = fork['owner']['login']
         fork_url = fork['html_url']
         fork_git_url = fork['git_url']
+        fork_created_at = fork['created_at']
         fork_updated_at = fork['updated_at']
         email = fork['owner']['email'] if 'email' in fork['owner'] else 'N/A'
 
